@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns   = "http://openoffice.org/extensions/description/2006"
+             xmlns:d="http://openoffice.org/extensions/description/2006" 
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+    <dependencies>
+    <!-- From the wiki: "...works in the specified OpenOffice.org versions as
+         well as in LibreOffice versions that correspond to at least the
+         specified OpenOffice.org reference version."
+         So there is no need to mention LibreOffice here.
+     -->
+        <OpenOffice.org-minimal-version value="2.4" d:name="OpenOffice.org 2.4"/> 
+    </dependencies>
+  
+    <identifier value="Astros.Montezuma.CalcTools.CalcFunctions.InterpolationImpl"/>
+    <version value="0.4" />
+
+    <display-name>
+        <name lang="en">Interpolation for Calc</name>
+    </display-name>
+    <publisher>
+        <name lang="en">Manuel V. Astros M.</name>
+    </publisher>
+
+    <extension-description>
+        <src xlink:href="pkg-desc/pkg-description_en.txt" lang="en"/>
+    </extension-description>
+
+    <icon>
+        <default xlink:href="icon/icon.png"/>
+    </icon>
+
+    <registration>
+        <simple-license accept-by="admin" default-license-id="ID0" suppress-on-update="true">
+            <license-text xlink:href="license/license_en.txt" lang="en" license-id="ID0"/>
+        </simple-license>
+    </registration>
+
+
+</description>

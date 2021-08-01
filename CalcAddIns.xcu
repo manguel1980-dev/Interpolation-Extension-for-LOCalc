@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry"
+                    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                    oor:name="CalcAddIns" oor:package="org.openoffice.Office">
+  <node oor:name="AddInInfo">
+    <node oor:name="Astros.Montezuma.CalcTools.CalcFunctions.python.InterpolationImpl" oor:op="replace">
+      <node oor:name="AddInFunctions">
+      
+        <!-- This function make a linear interpolation considering one column as a domine and a secund column as a range. And one element considere part of the type of the domain is interpolated to get its conterpat in the range clumn. -->
+        <node oor:name="interpo" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">interpo</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Linear interpolation from range and domine columns</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">interpo</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="x" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">x</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Element to interpolate</value></prop>
+            </node>
+            <node oor:name="lRangeX" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range in X</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Column of the type of element to interpolate</value></prop>
+            </node>
+            <node oor:name="lRangeY" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range in Y</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Column of independant element to interpolate</value></prop>
+            </node>
+          </node>
+        </node>
+        
+        <!-- This function make a linear interpolation with doble entrances, considering one array table that contain the domain and ranges to interpolate. and the two entrances. -->
+        <node oor:name="interpo2" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">interpo2</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Linear interpolation from a range array</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">interpo2</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="x" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">x</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Element to interpolate in the first column</value></prop>
+            </node>
+            <node oor:name="y" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">y</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Element to interpolate in the first row</value></prop>
+            </node>
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to interpolate</value></prop>
+            </node>
+          </node>
+        </node>
+        
+        <!-- This function make a spline cubic interpolation with one entrance, considering one array table that contain the domain and ranges to interpolate. and the one entrances, one key argument and two parameters to select the kind of interpolation. -->
+        <node oor:name="cercha" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cercha</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Cubic polynomial interpolacion from a range array</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cercha</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="x" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">x</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Element to interpolate</value></prop>
+            </node>
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to interpolate</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+        
+        <!-- Function to determination of the slope (1st derivative) at the initial point of first spline from one array table that contain the domain and ranges, and border condition to select the kind of interpolation Matlab ® (function csape) . -->
+        <node oor:name="cerchapi" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchapi</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the initial slope (1st derivative) at the first point of first spline - Matlab ® (function csape)</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchapi</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function to determine the final slope at the last point of the last spline from one array table that contain the domain and ranges, and border condition to select the kind of interpolation. -->
+        <node oor:name="cerchapf" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchapf</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the final slope at the last point of the last spline</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchapf</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function to determine the initial curvature (2nd derivative) at the first point of the first spline from one array table that contain the domain and ranges, and border condition to select the kind of interpolation. -->
+        <node oor:name="cerchaci" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchaci</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the initial curvature (2nd derivative) at the first point of the first spline</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchaci</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function to determine the final curvature (2nd derivative) at the last point of the last spline from one array table that contain the domain and ranges, and border condition to select the kind of interpolation. -->
+        <node oor:name="cerchacf" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchacf</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine determine the final curvature (2nd derivative) at the last point of the last spline</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchacf</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+  
+          <!-- Function determine the curvature radius of the segments in the given points from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation. -->
+        <node oor:name="cerchara" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchara</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the curvature radius of the segments in the given points.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchara</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+  
+       <!-- Function determine the determine the centers of curvature coordinates of the segment, in the given points from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation. -->
+        <node oor:name="cercharaxy" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cercharaxy</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the centers of curvature coordinates of the segment in the given points.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cercharaxy</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function determine the polynomial (spline) coeficient. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation. -->
+        <node oor:name="cerchac" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchac</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the polynomial (spline) coeficient.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchac</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function determine the polynomial (spline) coeficient repect to the origin of coordinates. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation. -->
+        <node oor:name="cerchacoef" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchacoef</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the polynomial (spline) coeficient repect to the origin of coordinates.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchacoef</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function determine the slopes (1st derivative) at the given (well-known) points from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation. -->
+        <node oor:name="cerchap" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchap</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the slopes (1st derivative) at the given points</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchap</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+            </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function determine the area under the spline until Xs axis. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cercharea" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cercharea</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the area under the spline until Xs axis</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cercharea</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function determine the static moment of the area under the spline respect Xs axis. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cerchamx" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchamx</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the static moment of the area under the spline until Xs axis.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchamx</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function determine the static moment of the area under the spline respect Ys axis. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cerchamy" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchamy</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the static moment of the area under the spline until Ys axis.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchamy</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- Function determine the secund moment of the area under the spline respect Xs axis. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cercham2x" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cercham2x</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the secund moment of the area under the spline until Xs axis.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cercham2x</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+       <!-- Function determine the secund moment of the area under the spline respect Ys axis. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cercham2y" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cercham2y</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the secund moment of the area under the spline until Ys axis.</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cercham2y</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+       <!-- Function determine the intertial product under the spline with respect to the Xs and Ys axes. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cerchap2" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchap2</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the intertial product under the spline with respect to the Xs and Ys axes</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchap2</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+       <!-- Function determine the longitudinal coordinate of the gravity center of the area formed under the spline. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cerchaxg" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchaxg</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine the longitudinal coordinate of the gravity center of the area formed under the spline</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchaxg</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+       <!-- Function determine the longitudinal coordinate of the gravity center of the area formed under the spline. from one array table that contain the domain and ranges to interpolate and border condition to select the kind of interpolation, moreover the first and last value integration interval for the area. -->
+        <node oor:name="cerchayg" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">cerchayg</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Determine vertical coordinate of the gravity center of the area formed under the spline</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">cerchayg</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="lRange" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">Range</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Range with all de data to process</value></prop>
+              </node>
+            <node oor:name="keyArg" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">keyArg</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Key Argument must be a combination of letters that define end points constraint</value></prop>
+            </node>
+            <node oor:name="v1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Smaller value constraint</value></prop>
+            </node>
+            <node oor:name="v2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">v2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Greater value constraint</value></prop>
+            </node>
+            <node oor:name="w1" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w1</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Firt value integration interval for area calculation (default first range value)</value></prop>
+            </node>
+            <node oor:name="w2" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">w2</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Second value integration interval for area calculation (last first range value)</value></prop>
+            </node>
+          </node>
+        </node>
+
+        <!-- This function calla a help hint about an interpolation fcuntions -->
+        <node oor:name="interpohelp" oor:op="replace">
+          <prop oor:name="DisplayName"><value xml:lang="en">interpohelp</value></prop>
+          <prop oor:name="Description"><value xml:lang="en">Call a hint help for interpolation addin or specific function</value></prop>
+          <prop oor:name="Category"><value>Add-In</value></prop>
+          <!-- Description of name used in interpolation Excel addin. -->
+          <prop oor:name="CompatibilityName"><value xml:lang="en">interpohelp</value></prop>
+          <node oor:name="Parameters">
+            <node oor:name="helpFucntion" oor:op="replace">
+              <prop oor:name="DisplayName"><value xml:lang="en">helpFunction</value></prop>
+              <prop oor:name="Description"><value xml:lang="en">Input a name of the function</value></prop>
+            </node>
+          </node>
+        </node>
+        
+        
+      </node>
+    </node>
+  </node>
+</oor:component-data>

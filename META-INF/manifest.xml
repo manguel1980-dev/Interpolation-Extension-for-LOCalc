@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!-- 
+<!DOCTYPE manifest:manifest PUBLIC "-//OpenOffice.org//DTD Manifest 1.0//EN" "Manifest.dtd">
+ -->
+
+<manifest:manifest>
+    <!-- Files that describe the extension and its components -->
+    <manifest:file-entry
+    manifest:media-type="application/vnd.sun.star.configuration-data"
+    manifest:full-path="CalcAddIns.xcu"/>
+
+    <manifest:file-entry
+    manifest:media-type="application/vnd.sun.star.package-bundle-description"
+    manifest:full-path="pkg-desc/pkg-description.txt"/>
+
+    <!-- File that contain the License -->
+    <manifest:file-entry
+    manifest:media-type="application/vnd.sun.star.framework-script"
+    manifest:full-path="source/"/>
+
+    <!-- The Python library that contains the Functions -->
+    <manifest:file-entry
+    manifest:media-type="application/vnd.sun.star.uno-component;type=Python"
+    manifest:full-path="source/Interpolation.py"/>
+
+    <!-- Compiled type library for the Calc addin -->
+    <manifest:file-entry
+    manifest:media-type="application/vnd.sun.star.uno-typelibrary;type=RDB"
+    manifest:full-path="idl/XInterpolation.rdb"/>
+
+
+</manifest:manifest>

@@ -1,0 +1,34 @@
+//Interface declaration
+
+#include <com/sun/star/uno/XInterface.idl>
+
+module Astros { module Montezuma { module CalcTools { module CalcFunctions {
+
+    interface XInterpolation : com::sun::star::uno::XInterface
+    {
+      //long intSuma( [in] long a, [in] long b );
+      //long intRango( [in] sequence< sequence< any > > aa );
+      any interpo( [in] double x, [in] sequence< sequence< any > > lRangeX, [in] sequence< sequence< any > > lRangeY );
+      any interpo2( [in] double x, [in] double y, [in] sequence< sequence< any > > lRange );
+      any cercha( [in] double x, [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      any cerchapi( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      any cerchapf( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      any cerchaci( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      any cerchacf( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      any cercharea( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      any cerchamx( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      any cerchamy( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      any cercham2x( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      any cercham2y( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      any cerchap2( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      any cerchaxg( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      any cerchayg( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2, [in] any w1, [in] any w2 );
+      sequence< sequence< any > > cerchara( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      sequence< sequence< any > > cercharaxy( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      sequence< sequence< any > > cerchac( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      sequence< sequence< any > > cerchacoef( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      sequence< sequence< any > > cerchap( [in] sequence< sequence< any > > lRange, [in] any keyArg, [in] any v1, [in] any v2 );
+      any interpohelp( [in] any helpFunction );
+    };
+
+}; }; }; };
